@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Odev
@@ -72,18 +73,51 @@ namespace Odev
             //}
 
 
-            Console.WriteLine("lütfen bir cümle giriniz: ");
-            string s = Console.ReadLine();
-            string[] s2 = s.Split(" ");
-            Console.Write("Toplam kelime sayısı: " + s2.Length);
-            Console.WriteLine();
-            int harfsayisi = 0;
-            for (int i = 0; i < s2.Length; i++)
-            {
-                char[] harfdizi = s2[i].ToCharArray();
-                harfsayisi += harfdizi.Length;
-            }
-            Console.WriteLine($"Toplam harf sayısı: {harfsayisi}");
+            //Console.WriteLine("lütfen bir cümle giriniz: ");
+            //string s = Console.ReadLine();
+            //string[] s2 = s.Split(" ");
+            //Console.Write("Toplam kelime sayısı: " + s2.Length);
+            //Console.WriteLine();
+            //int harfsayisi = 0;
+            //for (int i = 0; i < s2.Length; i++)
+            //{
+            //    char[] harfdizi = s2[i].ToCharArray();
+            //    harfsayisi += harfdizi.Length;
+            //}
+            //Console.WriteLine($"Toplam harf sayısı: {harfsayisi}");
+
+
+
+            //string[] strArr = new string[] {"1, 3, 4, 7, 13", "1, 2, 4, 13, 15"};
+            
+            //string str = strArr[0];
+            //string[] dizi = str.Split(", ");
+            //string str2 = strArr[1];
+            //string[] dizi2 = str2.Split(",");
+
+            //string[] temp = new string[dizi.Length];
+
+            //for (int i = 0; i < dizi.Length; i++)
+            //{
+            //    for (int j = 0; j < dizi2.Length; j++)
+            //    {
+            //        if (dizi[i]==dizi2[j])
+            //        {
+            //            temp[i] = dizi[i];
+            //            break;
+            //        }
+            //    }
+            //}
+
+            //string result = "";
+            //for (int i = 0; i < temp.Length; i++)
+            //{
+            //    result += temp[i];
+            //}
+            //Console.WriteLine(string.Join(",",result));
+            
+            
+
         }
     }
 }

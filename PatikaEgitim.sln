@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sınıf", "Sınıf\Sınıf.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kapsulleme", "Kapsulleme\Kapsulleme.csproj", "{F6A70C41-70FB-4C49-9605-DB67D677F834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelefonRehberUygulaması", "TelefonRehberUygulaması\TelefonRehberUygulaması.csproj", "{7260E4C0-106B-450B-ACEA-2BA3C1E478AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelefonRehberUygulaması", "TelefonRehberUygulaması\TelefonRehberUygulaması.csproj", "{7260E4C0-106B-450B-ACEA-2BA3C1E478AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TODO_Uygulaması", "TODO uygulaması\TODO_Uygulaması.csproj", "{F27EDBF2-8D94-4474-848B-B05BCA804B6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{7260E4C0-106B-450B-ACEA-2BA3C1E478AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7260E4C0-106B-450B-ACEA-2BA3C1E478AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7260E4C0-106B-450B-ACEA-2BA3C1E478AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27EDBF2-8D94-4474-848B-B05BCA804B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27EDBF2-8D94-4474-848B-B05BCA804B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27EDBF2-8D94-4474-848B-B05BCA804B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27EDBF2-8D94-4474-848B-B05BCA804B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
