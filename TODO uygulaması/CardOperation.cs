@@ -11,9 +11,28 @@ namespace TODO_uygulaması
     {
         public void AddToCard(Card card)
         {
-
             ToDoLine.ListOfToDo.Add(card);
+            
+        }
 
+        public static Card Add()
+        {
+            Console.WriteLine(" Başlık Giriniz                                  :");
+            string tittle = Console.ReadLine();
+            Console.WriteLine(" İçerik Giriniz                                  :");
+            string content = Console.ReadLine();
+            Console.WriteLine(" Büyüklük Seçiniz -> XS(1),S(2),M(3),L(4),XL(5)  :");
+            int size = int.Parse(Console.ReadLine());
+            Console.WriteLine(" Kişi Seçiniz                                    :");
+            int personId = int.Parse(Console.ReadLine());
+            if (size<6 && size>0 && personId<6 && personId>0)
+            {
+                Card card = new Card(tittle, content, personId, size);
+                return card;
+            }
+            Console.WriteLine("Boyut ya da kişi id'si hatalı girilmiştir!!");
+            return null;
+            
         }
 
         public void DeleteToCard()
@@ -82,7 +101,7 @@ namespace TODO_uygulaması
                 Console.WriteLine(" Başlık      :" + item.Baslik);
                 Console.WriteLine(" İçerik      :" + item.Icerik);
                 Console.WriteLine(" Atanan Kişi :" + item.Id);
-                Console.WriteLine(" Büyüklük    :" + item.Size);
+                Console.WriteLine(" Büyüklük    :" + EnumToSize(item.Size));
                 Console.WriteLine("-");
             }
 
@@ -94,7 +113,7 @@ namespace TODO_uygulaması
                 Console.WriteLine(" Başlık      :" + item.Baslik);
                 Console.WriteLine(" İçerik      :" + item.Icerik);
                 Console.WriteLine(" Atanan Kişi :" + item.Id);
-                Console.WriteLine(" Büyüklük    :" + item.Size);
+                Console.WriteLine(" Büyüklük    :" + EnumToSize(item.Size));
                 Console.WriteLine("-");
             }
 
@@ -106,15 +125,80 @@ namespace TODO_uygulaması
                 Console.WriteLine(" Başlık      :" + item.Baslik);
                 Console.WriteLine(" İçerik      :" + item.Icerik);
                 Console.WriteLine(" Atanan Kişi :" + item.Id);
-                Console.WriteLine(" Büyüklük    :" + item.Size);
+                Console.WriteLine(" Büyüklük    :" + EnumToSize(item.Size));
                 Console.WriteLine("-");
             }
 
         }
 
+        public static string EnumToSize(int size)
+        {
+            if (size==1)
+            {
+                return Size.XS.ToString();
+            }
+            else if (size == 2)
+            {
+                return Size.S.ToString();
+            }
+            else if (size == 3)
+            {
+                return Size.M.ToString();
+            }
+            else if (size == 4)
+            {
+                return Size.L.ToString();
+            }
+            else if (size == 5)
+            {
+                return Size.XL.ToString();
+            }
+            return null;
+
+        }
+
         public void MoveToCard()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(" Öncelikle silmek istediğiniz kartı seçmeniz gerekiyor.");
+            Console.WriteLine(" Lütfen kart başlığını yazınız:");
+            string tittle = Console.ReadLine();
+            var toDoArray = ToDoLine.ListOfToDo.ToArray();
+            var inProgressArray = InProgressLine.ListOfInProgress.ToArray();
+            var doneLineArray = DoneLine.ListOfDone.ToArray();
+            var isExist = toDoArray.FirstOrDefault(t => t.Baslik == tittle);
+            var isExist2 = inProgressArray.FirstOrDefault(t => t.Baslik == tittle);
+            var isExist3 = doneLineArray.FirstOrDefault(t => t.Baslik == tittle);
+            if (isExist!=null)
+            {
+                Console.WriteLine(" Bulunan Kart Bilgileri:");
+                Console.WriteLine(" **************************************");
+                Console.WriteLine(" Başlık      : " + isExist.Baslik);
+                Console.WriteLine(" İçerik      : " + isExist.Icerik);
+                Console.WriteLine(" Atanan Kişi : " + isExist.Id);
+                Console.WriteLine(" Büyüklük    : " + isExist.Size);
+                Console.WriteLine(" Line        : ToDo Line");
+            }
+            else if (isExist2 != null)
+            {
+                Console.WriteLine(" Bulunan Kart Bilgileri:");
+                Console.WriteLine(" **************************************");
+                Console.WriteLine(" Başlık      : " + isExist2.Baslik);
+                Console.WriteLine(" İçerik      : " + isExist2.Icerik);
+                Console.WriteLine(" Atanan Kişi : " + isExist2.Id);
+                Console.WriteLine(" Büyüklük    : " + isExist2.Size);
+                Console.WriteLine(" Line        : InProgress Line");
+            }
+            else
+            {
+                Console.WriteLine(" Bulunan Kart Bilgileri:");
+                Console.WriteLine(" **************************************");
+                Console.WriteLine(" Başlık      : " + isExist3.Baslik);
+                Console.WriteLine(" İçerik      : " + isExist3.Icerik);
+                Console.WriteLine(" Atanan Kişi : " + isExist3.Id);
+                Console.WriteLine(" Büyüklük    : " + isExist3.Size);
+                Console.WriteLine(" Line        : Done Line");
+            }
+
         }
 
         public void UpdateToCard()
